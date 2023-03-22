@@ -1,6 +1,7 @@
-package com.nit.Controller;
+package com.nit.test.controller;
 
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nit.Entity.Products;
-import com.nit.service.ProductService;
+import com.nit.test.Entity.Products;
+import com.nit.test.service.ProductService;
 
 import jakarta.persistence.criteria.CriteriaBuilder.In;
 
@@ -25,11 +26,14 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-	@PostMapping("/keep")
+	@PostMapping(value = "/keep")
 	public ResponseEntity<Products> Createproducts(@RequestBody Products pro)
 	{
 		System.out.println("ProductController.Createproducts()");
-		Products createPro = productService.CreatePro(pro);
+		
+		
+		
+		Products createPro =this.productService.CreatePro(pro);
 		
 		return new ResponseEntity<Products>(createPro, HttpStatus.CREATED);
 	}
@@ -64,7 +68,7 @@ public class ProductController {
 		
 	}
 	
-	@GetMapping("/proDetail")
+	@GetMapping("/proDetail/{pid}")
 	public ResponseEntity<Products>SingleProduct(@PathVariable  Integer pid){
 		Products singleProduct = productService.getSingleProduct(pid);
 		

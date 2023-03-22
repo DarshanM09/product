@@ -1,8 +1,8 @@
-package com.nit.Entity;
+package com.nit.test.Entity;
+
+
 
 import java.time.LocalDateTime;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,11 +18,14 @@ public class Products {
 	private String Pro_name;
 	private String Pro_Disc;
 	private double Pro_price;
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS][.SS][.S]")
 	private LocalDateTime arrivalTime;
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private LocalDateTime shelfLife;
-    
+	
+	private int shelfLife;
+
+	private LocalDateTime expirayDateTime;
+
+	
 	
 	
 	
@@ -56,19 +59,28 @@ public class Products {
 	public void setArrivalTime(LocalDateTime arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
-	public LocalDateTime getShelfLife() {
+
+	
+	public int getShelfLife() {
 		return shelfLife;
+	}
+	public void setShelfLife(int shelfLife) {
+		this.shelfLife = shelfLife;
+	}
+	public LocalDateTime getExpirayDateTime() {
+		return expirayDateTime;
+	}
+	public void setExpirayDateTime(LocalDateTime expirayDateTime) {
+		this.expirayDateTime = expirayDateTime;
 	}
 	@Override
 	public String toString() {
 		return "Products [id=" + id + ", Pro_name=" + Pro_name + ", Pro_Disc=" + Pro_Disc + ", Pro_price=" + Pro_price
-				+ ", arrivalTime=" + arrivalTime + ", shelfLife=" + shelfLife + "]";
-	}
-	public void setShelfLife(LocalDateTime shelfLife) {
-		this.shelfLife = shelfLife;
+				+ ", arrivalTime=" + arrivalTime + ", shelfLife=" + shelfLife + ", expirayDateTime=" + expirayDateTime
+				+ "]";
 	}
 	public Products(int id, String pro_name, String pro_Disc, double pro_price, LocalDateTime arrivalTime,
-			LocalDateTime shelfLife) {
+			int shelfLife, LocalDateTime expirayDateTime) {
 		super();
 		this.id = id;
 		Pro_name = pro_name;
@@ -76,7 +88,20 @@ public class Products {
 		Pro_price = pro_price;
 		this.arrivalTime = arrivalTime;
 		this.shelfLife = shelfLife;
+		this.expirayDateTime = expirayDateTime;
 	}
+	public Products() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+
+	
+	
+	
 	
 	
 	

@@ -1,8 +1,12 @@
-package com.nit.service;
+package com.nit.test.service;
 
 import java.util.List;
 
-import com.nit.Entity.Products;
+
+import com.nit.test.Entity.Products;
+
+
+
 
 public interface ProductService {
 	

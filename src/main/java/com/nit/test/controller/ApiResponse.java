@@ -1,4 +1,4 @@
-package com.nit.Controller;
+package com.nit.test.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

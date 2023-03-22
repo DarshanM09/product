@@ -1,6 +1,7 @@
-package com.nit.Exceptions;
+package com.nit.test.Exception;
 
 import java.util.HashMap;
+
 
 import java.util.Map;
 
@@ -11,8 +12,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.nit.Controller.ApiResponse;
-
+import com.nit.test.controller.ApiResponse;
 
 
 @RestControllerAdvice

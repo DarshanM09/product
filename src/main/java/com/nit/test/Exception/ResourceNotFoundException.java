@@ -1,4 +1,4 @@
-package com.nit.Exceptions;
+package com.nit.test.Exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 
