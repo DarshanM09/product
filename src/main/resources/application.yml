@@ -1,0 +1,34 @@
+server:
+  port: 9999
+
+  
+  #database connctivity
+  
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/productservice  
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+    
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+    
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
